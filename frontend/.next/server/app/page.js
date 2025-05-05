@@ -1,0 +1,12 @@
+const CHUNK_PUBLIC_PATH = "server/app/page.js";
+const runtime = require("../chunks/ssr/[turbopack]_runtime.js");
+runtime.loadChunk("server/chunks/ssr/c3a80_next_dist_73b876d8._.js");
+runtime.loadChunk("server/chunks/ssr/[root-of-the-server]__50a7c09c._.js");
+runtime.loadChunk("server/chunks/ssr/frontend_1e8446b7._.js");
+runtime.loadChunk("server/chunks/ssr/c3a80_eba62205._.js");
+runtime.loadChunk("server/chunks/ssr/c3a80_next_dist_client_components_forbidden-error_d8b59428.js");
+runtime.loadChunk("server/chunks/ssr/c3a80_next_dist_client_components_unauthorized-error_f762c475.js");
+runtime.loadChunk("server/chunks/ssr/frontend_85ff22e2._.js");
+runtime.getOrInstantiateRuntimeModule("[project]/frontend/.next-internal/server/app/page/actions.js [app-rsc] (server actions loader, ecmascript)", CHUNK_PUBLIC_PATH);
+runtime.getOrInstantiateRuntimeModule("[project]/frontend/node_modules/next/dist/esm/build/templates/app-page.js?page=/page { MODULE_0 => \"[project]/frontend/app/layout.tsx [app-rsc] (ecmascript, Next.js server component)\", MODULE_1 => \"[project]/frontend/node_modules/next/dist/client/components/not-found-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_2 => \"[project]/frontend/node_modules/next/dist/client/components/forbidden-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_3 => \"[project]/frontend/node_modules/next/dist/client/components/unauthorized-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_4 => \"[project]/frontend/app/page.tsx [app-rsc] (ecmascript, Next.js server component)\" } [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH);
+module.exports = runtime.getOrInstantiateRuntimeModule("[project]/frontend/node_modules/next/dist/esm/build/templates/app-page.js?page=/page { MODULE_0 => \"[project]/frontend/app/layout.tsx [app-rsc] (ecmascript, Next.js server component)\", MODULE_1 => \"[project]/frontend/node_modules/next/dist/client/components/not-found-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_2 => \"[project]/frontend/node_modules/next/dist/client/components/forbidden-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_3 => \"[project]/frontend/node_modules/next/dist/client/components/unauthorized-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_4 => \"[project]/frontend/app/page.tsx [app-rsc] (ecmascript, Next.js server component)\" } [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH).exports;
