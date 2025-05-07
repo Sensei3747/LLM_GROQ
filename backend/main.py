@@ -1,6 +1,6 @@
 # backend/main.py
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from groq_client import query_groq
 
@@ -10,7 +10,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000",
-                   "https://llm-groq.vercel.app"],
+                   "https://llm-groq-gfvsgu5a0-vivekofficial619-gmailcoms-projects.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -19,6 +19,10 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {"message": "FastAPI Backend is Running", "status": "online"}
+
+@app.head("/")
+async def root_head():
+    return Response()
 
 @app.post("/chat")
 async def chat(request: Request):
@@ -32,3 +36,7 @@ async def chat(request: Request):
         return {"response": response}
     except Exception as e:
         return {"response": f"Error: {str(e)}"}
+    
+@app.options("/chat")
+async def options_chat():
+    return Response(status_code=200)
