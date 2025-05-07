@@ -27,7 +27,7 @@ export default function ChatUI() {
       const res = await axios.post('http://localhost:8000/chat', { prompt: input });
       const botMessage = { role: 'assistant', content: res.data.response };
       setMessages((prev) => [...prev, botMessage]);
-    } catch (err) {
+    } catch {
       setMessages((prev) => [
         ...prev,
         { role: 'assistant', content: 'Error: Could not reach the server.' },
@@ -47,7 +47,7 @@ export default function ChatUI() {
             <p>Start a conversation with the Groq chatbot!</p>
           </div>
         )}
-        
+
         {messages.map((msg, idx) => (
           <div 
             key={idx}
@@ -78,7 +78,7 @@ export default function ChatUI() {
             </div>
           </div>
         ))}
-        
+
         {isLoading && (
           <div className="flex justify-start">
             <div className="flex">
@@ -91,10 +91,10 @@ export default function ChatUI() {
             </div>
           </div>
         )}
-        
+
         <div ref={messagesEndRef} />
       </div>
-      
+
       {/* Input area */}
       <div className="border-t p-4">
         <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
