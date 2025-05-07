@@ -10,7 +10,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000",
-                   "https://llm-groq-gfvsgu5a0-vivekofficial619-gmailcoms-projects.vercel.app"],
+                   "https://llm-groq-gfvsgu5a0-vivekofficial619-gmailcoms-projects.vercel.app",
+                   "https://llm-groq.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
