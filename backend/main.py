@@ -9,10 +9,16 @@ app = FastAPI()
 # Allow frontend dev environment
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000",
+                   "https://llm-groq.vercel.app"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+async def root():
+    return {"message": "FastAPI Backend is Running", "status": "online"}
 
 @app.post("/chat")
 async def chat(request: Request):
