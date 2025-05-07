@@ -17,14 +17,15 @@ export default function ChatUI() {
 
   const sendMessage = async () => {
     if (!input.trim()) return;
-
+  
     const userMessage = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
-
+  
     try {
-      const res = await axios.post('http://localhost:8000/chat', { prompt: input });
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const res = await axios.post(`${apiUrl}/chat`, { prompt: input });
       const botMessage = { role: 'assistant', content: res.data.response };
       setMessages((prev) => [...prev, botMessage]);
     } catch {
@@ -36,6 +37,7 @@ export default function ChatUI() {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <div className="flex flex-col h-[80vh] bg-white rounded-lg shadow-lg">
